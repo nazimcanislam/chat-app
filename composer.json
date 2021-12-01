@@ -1,0 +1,14 @@
+{
+    "name": "chat-app/chat-app",
+    "description": "A simple web based messaging application written in PHP and MySQL.",
+    "version": "1.0.0-dev",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Nazımcan İslam",
+            "email": "nazimcanislam@gmail.com",
+            "role": "Developer",
+            "homepage": "https://github.com/nazimcanislam/"
+        }
+    ]
+}

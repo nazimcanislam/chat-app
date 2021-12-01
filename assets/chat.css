@@ -1,0 +1,267 @@
+.main-container {
+    max-width: 1400px;
+    width: 100%;
+    height: 95vh;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px -1px rgba(0, 0, 0, 0.75);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2fr 9fr 9fr 1fr;
+    grid-template-areas:
+        "userbox opponentcontainer opponentcontainer opponentcontainer"
+        "chatsgroup messagescontainer messagescontainer messagescontainer"
+        "chatsgroup messagescontainer messagescontainer messagescontainer"
+        "chatsgroup writetextcontainer writetextcontainer writetextcontainer";
+    position: relative;
+}
+
+.main-container .user-box {
+    grid-area: userbox;
+    background-color: #3498db;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 16px;
+    position: relative;
+}
+
+.main-container .user-box img {
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    width: 70px;
+    height: 70px;
+    margin-right: 12px;
+}
+
+.main-container .user-box .user-name {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.main-container .user-box .user-settings-bar {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.main-container .user-box .user-settings-bar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.main-container .chats-group {
+    grid-area: chatsgroup;
+    background-color: #2980b9;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.main-container .chats-group .user-no-chated {
+    color: #ffffff;
+    text-align: center;
+    padding: 12px 10px;
+}
+
+.main-container .chats-group .user-no-chated i {
+    display: block;
+    font-size: 86px;
+    margin-top: 12px;
+}
+
+.main-container .chats-group .chats-group-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    text-decoration: none;
+    transition: background-color 200ms ease-in-out;
+}
+
+.main-container .chats-group .chats-group-item:hover {
+    background-color: #216d9e;
+}
+
+.main-container .chats-group .chats-group-item img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    margin-right: 10px;
+}
+
+.main-container .chats-group .chats-group-item .chats-group-item-name {
+    color: #ffffff;
+}
+
+.main-container .opponent-container {
+    max-width: 100%;
+    grid-area: opponentcontainer;
+    background-color: #3498db;
+    border-left: 1px solid rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+}
+
+.main-container .opponent-container a {
+    text-decoration: none;
+}
+
+.main-container .opponent-container a span {
+    color: #ffffff;
+}
+
+.main-container .opponent-container a img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    margin: 0 12px 0 10px;
+}
+
+.main-container .messages-container {
+    max-width: 100%;
+    grid-area: messagescontainer;
+    background-color: #ecf0f1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.main-container .write-text-container {
+    grid-area: writetextcontainer;
+    background-color: #3498db;
+    border-left: 1px solid rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.main-container .write-text-container form input[type=text] {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    height: 100%;
+    padding: 0 16px 0 16px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #ffffff;
+    overflow-y: scroll;
+}
+
+.main-container .write-text-container form input[type=text]::placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.main-container .write-text-container form button[type=submit] {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    font-size: 22px;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.main-container .messages-container .message {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.main-container .messages-container .message img.message-user-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.main-container .messages-container .message .msg-content {
+    max-width: max-content;
+    padding: 10px 12px;
+    margin: 12px 20px;
+    border-radius: 4px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow-wrap: break-word;
+}
+
+.main-container .messages-container .message .msg-content span {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+
+.main-container .messages-container .message .msg-date {
+    padding: 4px 12px;
+    color: #999999;
+}
+
+.main-container .messages-container .message.own-message .msg-content {
+    background-color: #3498db;
+}
+
+.main-container .messages-container .message.opponent-message .msg-content {
+    background-color: #7f8c8d;
+}
+
+.add-contact-container {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* overflow: hidden; */
+}
+
+.add-contact-container .add-contact-button {
+    width: 60px;
+    height: 60px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #3498db;
+    padding: 16px;
+    font-size: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-contact-container form {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.add-contact-container form input {
+    display: block;
+    width: 200px;
+    padding: 12px 10px;
+    margin-left: 32px;
+    border: 1px solid #ececec;
+    border-radius: 6px;
+    position: absolute;
+    transform: translate(-50%, +50%);
+    left: 50%;
+    bottom: -200%;
+    transition: bottom 300ms ease-in-out;
+}
+
+.add-contact-container form input.show {
+    bottom: 50%;
+}
